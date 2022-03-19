@@ -6,7 +6,7 @@ app = Flask(__name__)
 def index():
     return "Hello!"
 
-@app.route("/display_data",methods=['GET'])
+@app.route("/get_data",methods=['GET'])
 def display_data():
     jsonbody = {
         "products" : [],
