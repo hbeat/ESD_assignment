@@ -1,13 +1,16 @@
 import json
+import logging
 from flask import Flask, request, make_response, jsonify
 
 app = Flask(__name__)
 @app.route("/")
 def index():
+    app.logger.info("INFO log: Some One landed!")
     return "Hello!"
 
 @app.route("/products",methods=['GET'])
 def display_data():
+    app.logger.info("Some One request Product data")
     jsonbody = {
         "products" : [],
     }
@@ -43,4 +46,5 @@ def insert_data():
 ##http://127.0.0.1:5000/insert_data?product=<product_name>&quantity=<qty>
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run(port=5000,debug=True)
+
