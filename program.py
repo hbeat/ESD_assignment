@@ -1,7 +1,7 @@
 import requests
 import json 
 
-url = 'http://127.0.0.1:5000/get_data'
+url = 'http://127.0.0.1:5000/products'
 res = requests.get(url)
 response = json.loads(res.text)
 with open('api_data.txt', 'w') as f:
